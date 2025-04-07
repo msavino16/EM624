@@ -7,3 +7,6 @@ ratings.csv
 *.csv
 exercise06.html
 bokeh_plots.html
+GigPros.txt
+GigsCons.txt
+stopwords_en.txt
