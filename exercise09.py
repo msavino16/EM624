@@ -68,12 +68,8 @@ print()
 #4 the evolution of the medium over the years in terms of monetary value  [using the Music Sales Data file]
 music_sales_data = pd.read_csv('Music Sales Data 1973-2021.csv')
 music_sales_data['Format Value # (Million)'] = music_sales_data['Format Value # (Million)'].str.replace('$', '').str.replace('M', '').astype(float)
-yearly_by_format = music_sales_data.pivot_table(
-    index='Year',
-    columns='Format',
-    values='Format Value # (Million)',
-    aggfunc='sum'
-)
+yearly_by_format = music_sales_data.pivot_table(index='Year', columns='Format', values='Format Value # (Million)', aggfunc='sum')
+
 #all formats
 total_sales_per_format = music_sales_data.groupby('Format')['Format Value # (Million)'].sum()
 top_formats = total_sales_per_format.sort_values(ascending=False).index
